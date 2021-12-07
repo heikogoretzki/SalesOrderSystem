@@ -8,6 +8,10 @@ public class Item {
     private String description;
     private List<OrderDetail> orderDetailList = new ArrayList<>();
 
+    public void getWeights() {
+
+    }
+
     public void getPriceForQuantity() {
 
     }
