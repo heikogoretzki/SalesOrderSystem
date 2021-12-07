@@ -1,15 +1,15 @@
 package de.mischokacademy.SalesOrderSystem.Domain.Payment;
 
 public class WireTransfer extends Payment {
-    private String bacnkID;
+    private String bankID;
     private String bankName;
 
-    public String getBacnkID() {
-        return bacnkID;
+    public String getBankID() {
+        return bankID;
     }
 
-    public void setBacnkID(String bacnkID) {
-        this.bacnkID = bacnkID;
+    public void setBankID(String bankID) {
+        this.bankID = bankID;
     }
 
     public String getBankName() {
