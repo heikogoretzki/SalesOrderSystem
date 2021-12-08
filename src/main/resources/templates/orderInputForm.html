@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Order Input Form</title>
 </head>
 <body>
+
+<form method="post" action="orderInput" th:object="${orderInputForm}">
+
+<!--    <label for="createDate"><input id="createDate" type="text" placeholder="2021-12-08" th:field="*{createDate}"></label>-->
+
+    <label for="customer">
+        <select id="customer" th:field="*{customer}">
+            <option value="select a customer"></option>
+            <option th:each="temp : ${customerList}"
+                    th:text="${temp.getName}"
+                    th:value="${customerList.indexOf(temp)}"></option>
+        </select>
+    </label>
+
+    <label for="orderStatus">
+        <select id="orderStatus" th:field="*{orderStatus}">
+            <option value="select a customer"></option>
+            <option th:each="temp : ${orderList}"
+                    th:text="${temp.getOrderStatus}"
+                    th:value="${orderList.indexOf(temp)}"></option>
+        </select>
+    </label>
+
+    <label for="submit">
+        <button type="submit" id="submit">Submit</button>
+    </label>
+
+</form>
 
 </body>
 </html>

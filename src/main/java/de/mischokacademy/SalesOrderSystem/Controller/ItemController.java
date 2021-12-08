@@ -30,6 +30,8 @@ public class ItemController {
         model.addAttribute("itemInputForm", new Item());
         model.addAttribute("itemList", itemList);
 
+        System.out.println(itemList);
+
         return "itemInputForm";
     }
 

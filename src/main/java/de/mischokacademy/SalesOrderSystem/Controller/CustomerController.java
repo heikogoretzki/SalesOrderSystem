@@ -30,6 +30,8 @@ public class CustomerController {
         model.addAttribute("customerInputForm", new Customer());
         model.addAttribute("customerList", customerList);
 
+        System.out.println(customerList);
+
         return "customerInputForm";
     }
 

@@ -49,4 +49,15 @@ public class Customer {
     public void setOrderList(List<Order> orderList) {
         this.orderList = orderList;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "name='" + name + '\'' +
+                ", deliveryAddress='" + deliveryAddress + '\'' +
+                ", contact='" + contact + '\'' +
+                ", active=" + active +
+                ", orderList=" + orderList +
+                '}';
+    }
 }

@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Customer Input</title>
 </head>
 <body>
+
+<form method="post" action="input" th:object="${customerInputForm}">
+
+    <label for="active"><input id="active" type="checkbox" th:field="*{active}"></label>
+    <label for="name"><input id="name" th:field="*{name}" placeholder="Name"></label>
+    <label for="deliveryAddress"><input id="deliveryAddress" th:field="*{deliveryAddress}" placeholder="Delivery Address"></label>
+    <label for="contact"><input id="contact" th:field="*{contact}" placeholder="Contact"></label>
+
+    <label for="submit">
+        <button type="submit" id="submit">Submit</button>
+    </label>
+
+</form>
 
 </body>
 </html>

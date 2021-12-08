@@ -45,4 +45,14 @@ public class OrderDetail {
     public void setItem(Item item) {
         this.item = item;
     }
+
+    @Override
+    public String toString() {
+        return "OrderDetail{" +
+                "qty=" + qty +
+                ", taxStatus='" + taxStatus + '\'' +
+                ", order=" + order +
+                ", item=" + item +
+                '}';
+    }
 }

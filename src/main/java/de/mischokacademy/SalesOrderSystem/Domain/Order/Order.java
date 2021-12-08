@@ -52,4 +52,15 @@ public class Order {
     public void setPaymentList(List<Payment> paymentList) {
         this.paymentList = paymentList;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "createDate=" + createDate +
+                ", customer=" + customer +
+                ", orderStatus=" + orderStatus +
+                ", lineItemOrderDetail=" + lineItemOrderDetail +
+                ", paymentList=" + paymentList +
+                '}';
+    }
 }
