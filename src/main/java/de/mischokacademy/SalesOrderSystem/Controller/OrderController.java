@@ -14,7 +14,7 @@ import java.util.Objects;
 
 @Controller
 public class OrderController {
-    List<Order> orderList = new ArrayList<>();
+    public static List<Order> orderList = new ArrayList<>();
 
     @GetMapping("orderInput")
     public String getOrderInputForm(Model model) {
@@ -22,6 +22,8 @@ public class OrderController {
 
         model.addAttribute("orderInputForm", new OrderForm());
         model.addAttribute("orderList", orderList);
+        model.addAttribute("customerList", CustomerController.customerList);
+        model.addAttribute("orderList", OrderController.orderList);
 
         return "orderInputForm";
     }
@@ -31,12 +33,12 @@ public class OrderController {
         Objects.requireNonNull(model);
         Objects.requireNonNull(orderForm);
 
-//        orderFormList.add(orderForm);
-
-        convertOrderFormToOrder(orderForm);
+        orderList.add(convertOrderFormToOrder(orderForm));
 
         model.addAttribute("orderInputForm", new OrderForm());
         model.addAttribute("orderList", orderList);
+        model.addAttribute("customerList", CustomerController.customerList);
+        model.addAttribute("orderList", OrderController.orderList);
 
         System.out.println(orderList);
 
@@ -54,8 +56,7 @@ public class OrderController {
 
     private Order convertOrderFormToOrder(OrderForm orderForm) {
         Objects.requireNonNull(orderForm);
-        CustomerController temp = new CustomerController();
-        Customer customer = temp.customerList.get(orderForm.getListIndexCustomer());
+        Customer customer = CustomerController.customerList.get(orderForm.getListIndexCustomer());
 
         Order newOrder = new Order();
         newOrder.setCustomer(customer);

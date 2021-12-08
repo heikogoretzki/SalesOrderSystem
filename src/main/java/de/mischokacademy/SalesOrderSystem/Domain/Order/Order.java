@@ -1,12 +1,14 @@
 package de.mischokacademy.SalesOrderSystem.Domain.Order;
 
 import de.mischokacademy.SalesOrderSystem.Domain.Payment.Payment;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Order {
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createDate;
     private Customer customer;
     private OrderStatus orderStatus;

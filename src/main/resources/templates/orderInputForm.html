@@ -8,10 +8,10 @@
 
 <form method="post" action="orderInput" th:object="${orderInputForm}">
 
-<!--    <label for="createDate"><input id="createDate" type="text" placeholder="2021-12-08" th:field="*{createDate}"></label>-->
+<!--    <label for="createDate"><input id="createDate" type="date" placeholder="2021-12-08" th:field="*{createDate}" th:value="*{createDate}"></label>-->
 
     <label for="customer">
-        <select id="customer" th:field="*{customer}">
+        <select id="customer" th:field="*{listIndexCustomer}">
             <option value="select a customer"></option>
             <option th:each="temp : ${customerList}"
                     th:text="${temp.getName}"
@@ -20,11 +20,11 @@
     </label>
 
     <label for="orderStatus">
-        <select id="orderStatus" th:field="*{orderStatus}">
+        <select id="orderStatus" th:field="*{listIndexCustomer}">
             <option value="select a customer"></option>
-            <option th:each="temp : ${orderList}"
-                    th:text="${temp.getOrderStatus}"
-                    th:value="${orderList.indexOf(temp)}"></option>
+            <option th:each="temp : ${T(de.mischokacademy.SalesOrderSystem.Domain.Order.OrderStatus).values()}"
+                    th:text="${temp}"
+                    th:value="${temp}"></option>
         </select>
     </label>
 

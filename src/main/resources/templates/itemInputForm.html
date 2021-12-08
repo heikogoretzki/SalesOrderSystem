@@ -9,7 +9,7 @@
 <form method="post" action="itemInput" th:object="${itemInputForm}">
 
     <label for="description"><input id="description" type="text" placeholder="Description" th:field="*{description}"></label>
-    <label for="weight"><input id="weight" type="number" placeholder="Weight" th:field="*{weight}"></label>
+    <label for="weight"><input id="weight" type="number" placeholder="Weight" step="any" th:field="*{weight}"></label>
 
     <label for="submit">
         <button type="submit" id="submit">Submit</button>

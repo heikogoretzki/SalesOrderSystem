@@ -11,7 +11,7 @@ import java.util.List;
 
 @Controller
 public class CustomerController {
-    public List<Customer> customerList = new ArrayList<>();
+    public static List<Customer> customerList = new ArrayList<>();
 
     @GetMapping("input")
     public String getCustomerInputForm(Model model) {
